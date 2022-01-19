@@ -1,10 +1,10 @@
 const read = () => {
-    $.ajax({
-      type: "GET",
-      url: "http://localhost:3000/dogs/read",
-      success: function (data) {
-        for (dog of data) {
-          let div = `<div class="card" id="DogCard" style="width: 18rem;">
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:3000/dogs/read",
+    success: function (data) {
+      for (dog of data) {
+        let div = `<div class="card" id="DogCard" style="width: 18rem;">
                       <div class="card-body">
                         <h5 class="card-title">${dog.name}</h5>
                         <p class="card-text">Age: ${dog.age}</p>
@@ -16,11 +16,10 @@ const read = () => {
                         </center>
                       </div>
                     </div>`;
-          $(".Dogs").append(div);
-        }
-      },
-    });
-  };
+        $(".Dogs").append(div);
+      }
+    },
+  });
+};
 
-read()
-  
+read();

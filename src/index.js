@@ -37,7 +37,7 @@ app.post("/dogs/create", function (req, res) {
 });
 
 // READ
-app.get("/dogs/read", function (req, res){
+app.get("/dogs/read", function (req, res) {
   client.query("SELECT * FROM DOGS").then(function (ret) {
     res.send(ret.rows);
   });
@@ -53,7 +53,7 @@ app.put("/dogs/update", function (req, res) {
         req.body.name,
         req.body.age,
         req.body.breed,
-        req.body.description
+        req.body.description,
       ],
     })
     .then(function (ret) {
