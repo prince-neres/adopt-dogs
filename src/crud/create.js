@@ -9,14 +9,11 @@ const create = () => {
       type: "POST",
       data: JSON.stringify({
         name: name,
-        age: age,
+        age: Number(age),
         breed: breed,
         description: description,
       }),
-      contentType: "application/json",
-      success: function (data) {
-        location.reload();
-      },
+      contentType: "application/json"
     });
     location.reload();
   };

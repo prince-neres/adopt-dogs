@@ -11,7 +11,7 @@ const read = () => {
                         <p class="card-text">Breed: ${dog.breed}</p>
                         <p class="card-text">${dog.description}</p>
                         <center>
-                        <a href="#" class="btn btn-primary" onclick="update(${dog.id}, '${dog.name}', ${dog.age}, '${dog.breed}', '${dog.description}')">Update</a>
+                        <a href="#" class="btn btn-primary" onclick="update(this, ${dog.id}, '${dog.name}', ${dog.age}, '${dog.breed}', '${dog.description}')">Update</a>
                         <a href="#" class="btn btn-danger" id="${dog.id}" onclick="remove(${dog.id})">Remove</a>
                         </center>
                       </div>

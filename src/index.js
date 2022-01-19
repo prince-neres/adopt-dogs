@@ -47,13 +47,13 @@ app.get("/dogs/read", function (req, res){
 app.put("/dogs/update", function (req, res) {
   client
     .query({
-      text: "UPDATE DOGS SET NAME = $1, AGE = $2, BREED = $3, DESCRIPTION = $4 WHERE ID = $5",
+      text: "UPDATE DOGS SET NAME = $2, AGE = $3, BREED = $4, DESCRIPTION = $5 WHERE ID = $1",
       values: [
+        req.body.id,
         req.body.name,
         req.body.age,
         req.body.breed,
-        req.description,
-        req.body.id,
+        req.body.description
       ],
     })
     .then(function (ret) {
