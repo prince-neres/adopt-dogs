@@ -20,37 +20,44 @@ client.connect();
 
 // CREATE
 app.post("/dogs/create", function (req, res) {
-  client
-  .query('ALTER SEQUENCE DOGS_ID_seq RESTART WITH 1')
+  client.query("ALTER SEQUENCE DOGS_ID_seq RESTART WITH 1");
   client
     .query({
       text: "INSERT INTO DOGS(NAME, AGE, BREED, DESCRIPTION) VALUES($1, $2, $3, $4)",
-      values: [req.body.name, req.body.age, req.body.breed, req.body.description],
+      values: [
+        req.body.name,
+        req.body.age,
+        req.body.breed,
+        req.body.description,
+      ],
     })
     .then(function (ret) {
-        console.log('Cachorro cadastrado:', req.body)
+      console.log("Cachorro cadastrado:", req.body);
     });
 });
 
 // READ
-app.get('/dogs/read',function(req, res){
-      client
-      .query('SELECT * FROM DOGS')
-      .then(function (ret) {
-        res.send(ret.rows)
-    });
-  }
-)
+app.get("/dogs/read", function (req, res) {
+  client.query("SELECT * FROM DOGS").then(function (ret) {
+    res.send(ret.rows);
+  });
+});
 
 // UPDATE
 app.put("/dogs/update", function (req, res) {
   client
     .query({
       text: "UPDATE DOGS SET NAME = $1, AGE = $2, BREED = $3, DESCRIPTION = $4 WHERE ID = $5",
-      values: [req.body.name, req.body.age, req.body.breed, req.description, req.body.id],
+      values: [
+        req.body.name,
+        req.body.age,
+        req.body.breed,
+        req.description,
+        req.body.id,
+      ],
     })
     .then(function (ret) {
-        console.log('Dados atualizados:', req.body)
+      console.log("Dados atualizados:", req.body);
     });
 });
 
@@ -62,11 +69,10 @@ app.delete("/dogs/delete", function (req, res) {
       values: [req.body.id],
     })
     .then(function (ret) {
-        console.log(`Cão de ID: ${req.body.id} foi removido com sucesso!`)
+      console.log(`Cão de ID: ${req.body.id} foi removido com sucesso!`);
     });
 });
 
 app.listen(3000, function () {
   console.log("Servidor rodando na porta 3000");
 });
-
