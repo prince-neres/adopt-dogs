@@ -15,6 +15,7 @@ p{
 a{
     text-decoration: none;
     color: rgb(0, 0, 44);
+    margin-top: 10px;
 }
 
 h3{
@@ -30,17 +31,22 @@ li{
     list-style: none;
     font-size: 18px;
     cursor: pointer;
-    padding: 10px;
+    padding-right: 10px;
 }
 
+label{
+    color: white;
+    margin-top: 10px;
+}
 
 body{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 1fr 10vh;
+    grid-template-rows: 1fr 8fr;
     grid-template-areas: 'nav'
-                         'main'
-                         'footer';
+                         'main';
+    height: 100%;
+    background-color: rgb(67, 78, 121);
 }
 
 nav{
@@ -55,19 +61,7 @@ nav{
 main{
     grid-area: main;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.DogForm{
-    display: flex;
-    width: 300px;
-    height: 500px;
-    margin: 0 auto;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    text-align: center;
 }
 
 .Dogs{
@@ -77,15 +71,38 @@ main{
 }
 
 #DogCard{
-    display: flex;
     margin: auto;
     margin: 10px;
 }
 
-footer{
-    background-color: rgb(255, 136, 0);
-    text-align: center;
-    grid-area: footer;
-
+#DogCard > .card-body > p{
+    text-align: left;
 }
+
+.DogForm{
+    width: 300px;
+    margin: 0 auto;
+    display: none;
+    margin-top: 30px;
+}
+
+#AboutUs{
+    align-items: center;
+    display: none;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin-top: 10px;
+}
+
+.card-img-top{
+    width: 150px;
+}
+
+.form-control{
+    text-indent: 1.5;
+}
+
 

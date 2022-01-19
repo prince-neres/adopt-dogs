@@ -23,7 +23,7 @@ app.post("/dogs/create", function (req, res) {
   client.query("ALTER SEQUENCE DOGS_ID_seq RESTART WITH 1");
   client
     .query({
-      text: "INSERT INTO DOGS(NAME, AGE, BREED, DESCRIPTION) VALUES($1, $2, $3, $4)",
+      text: "INSERT INTO DOGS(ID, NAME, AGE, BREED, DESCRIPTION) VALUES(NEXTVAL('dogs_sequence'), $1, $2, $3, $4)",
       values: [
         req.body.name,
         req.body.age,
@@ -37,7 +37,7 @@ app.post("/dogs/create", function (req, res) {
 });
 
 // READ
-app.get("/dogs/read", function (req, res) {
+app.get("/dogs/read", function (req, res){
   client.query("SELECT * FROM DOGS").then(function (ret) {
     res.send(ret.rows);
   });
