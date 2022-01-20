@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Adopt Dogs</h1>
-  <img src="adoptdogs1" > 
-  <img src="adoptdogs2" >
+  <img src="src/imgs/adoptdogs1.png" > 
+  <img src="src/imgs/adoptdogs2.png" >
 </div>
 </div>
 
@@ -13,4 +13,6 @@
 * Bootstrap
 * NodeJS
 * PostgreSQL
+
+
 
