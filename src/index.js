@@ -32,6 +32,7 @@ app.post("/dogs/create", function (req, res) {
       ],
     })
     .then(function (ret) {
+      res.send('OK');
       console.log("Cachorro cadastrado:", req.body);
     });
 });
@@ -57,6 +58,7 @@ app.put("/dogs/update", function (req, res) {
       ],
     })
     .then(function (ret) {
+      res.send('OK');
       console.log("Dados atualizados:", req.body);
     });
 });
@@ -69,6 +71,7 @@ app.delete("/dogs/delete", function (req, res) {
       values: [req.body.id],
     })
     .then(function (ret) {
+      res.send('OK');
       console.log(`Cão de ID: ${req.body.id} foi removido com sucesso!`);
     });
 });

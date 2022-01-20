@@ -40,9 +40,6 @@ const put = (id, name, age, breed, description) => {
     }),
     contentType: "application/json",
   });
-  reload();
+  location.reload();
 };
 
-function reload() {
-  location.reload();
-}
