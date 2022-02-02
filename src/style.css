@@ -62,17 +62,19 @@ nav {
 main {
   grid-area: main;
   display: flex;
-  text-align: center;
+  justify-content: center;
 }
 
 .Dogs {
   display: flex;
+  justify-content: center;
   margin: auto;
   flex-wrap: wrap;
+  padding-top: 10px;
 }
 
 #DogCard {
-  margin: auto;
+  margin: 0 auto;
   margin: 10px;
 }
 
@@ -88,14 +90,17 @@ main {
 }
 
 #AboutUs {
-  align-items: center;
   display: none;
-  margin: 0 auto;
+  margin: 0  0 auto;
   flex-wrap: wrap;
 }
 
+.card-deck {
+  display: flex;
+}
+
 .card {
-  margin-top: 10px;
+  margin: 20px 10px;
 }
 
 .card-img-top {
