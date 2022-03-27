@@ -3,7 +3,6 @@
   <img src="src/imgs/adoptdogs1.png" > 
   <img src="src/imgs/adoptdogs2.png" >
 </div>
-</div>
 
 ## Tecnologias usadas
 * HTML
